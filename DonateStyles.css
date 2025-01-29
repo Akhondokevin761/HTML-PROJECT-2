@@ -76,16 +76,19 @@ nav .fa{
         display: block;
     }
     .nav-links{
-        position: absolute;
-        background: forestgreen;
-        height: 100vh;
-        width: 200px;
-        top: 0;
-        right: -200px;
+        display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: right 0.3s ease;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%; /* Fully hide the nav-links off-screen */
+        width: 200px;
+        height: 100vh;
+        background-color: forestgreen;
+        padding: 20px 10px;
+        box-sizing: border-box;
+        transition: right 0.3s ease; /* Smooth transition */
+        z-index: 999;
 
     }
     nav .fa{
@@ -109,10 +112,18 @@ nav .fa{
         align-items:center;
     }
     .nav-links ul{
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
+        list-style: none;
+        padding: 0; /* Remove default padding */
+        margin: 20px 0 0; /* Add consistent spacing from the close icon */
+        width: 100%; /* Ensure full width */
 
+    }
+    .nav-links li{
+        margin: 10px 0; /* Add even spacing between links */
+    }
+    .icon {
+        align-self: flex-end; /* Align close icon to the right */
+        margin-bottom: 10px; /* Add space below the close icon */
     }
 }
 

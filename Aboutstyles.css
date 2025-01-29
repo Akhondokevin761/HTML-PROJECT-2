@@ -24,9 +24,6 @@ nav{
 .nav-links{
     flex: 1;
     text-align: right;
-    justify-content: space-between;
-    background-position: center;
-    background-size: cover;
 }
 
 .nav-links ul li{
@@ -65,54 +62,69 @@ nav .fa{
     display: none;
 }
 
-@media(max-width:700px){
-    .text-box h1{
+@media(max-width: 768px) {
+    /* Text Box */
+    .text-box h1 {
         font-size: 20px;
+    }
     
-    }
-    .nav-links ul li{
+    /* Navigation */
+    .nav-links ul li {
         display: block;
     }
-    .nav-links{
-        position: absolute;
-        background: forestgreen;
-        height: 100vh;
-        width: 200px;
-        top: 0;
-        right: -200px;
-        text-align: left;
-        z-index: 2;
-        transition: 1s;
 
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%; /* Fully hide the nav-links off-screen */
+        width: 200px;
+        height: 100vh;
+        background-color: forestgreen;
+        padding: 20px 10px;
+        box-sizing: border-box;
+        transition: right 0.3s ease; /* Smooth transition */
+        z-index: 999;
     }
-    nav .fa{
+
+    nav .fa {
         display: block;
-        color:skyblue;
+        color: skyblue;
         margin: 10px auto;
         justify-content: right;
         font-size: 30px;
         cursor: pointer;
         text-align: right;
     }
-    .section>.nav-links>.icon{
-        display: flexbox;
-        justify-content: left;
-        align-items: center;
-        color: yellow;
-    }
-    .section>.nav-links>.icon-1{
-        display: flex;
-        justify-content: flex-start;
-        align-items:center;
-    }
-    .nav-links ul{
-        padding: 20px;
 
+    .nav-links ul {
+        list-style: none;
+        padding: 0; /* Remove default padding */
+        margin: 20px 0 0; /* Add consistent spacing from the close icon */
+        width: 100%; /* Ensure full width */
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Add even spacing between links */
+    }
+
+    .icon {
+        align-self: flex-end; /* Align close icon to the right */
+        margin-bottom: 10px; /* Add space below the close icon */
     }
 }
-
 img{
     max-width: 100%;
+}
+
+/* Footer */
+footer{
+    text-align: center;
+    padding: 10px 20px;
+    background: whitesmoke;
+    color: skyblue;
 }
 
 /* About stlyes */
@@ -203,12 +215,4 @@ img{
 .About-MV>.MV-content:hover{
     transform: translateY(-10px);
     box-shadow: 0 8px 12px rgb(0,0,0,0.2);;
-}
-
-/* Footer */
-footer{
-    text-align: center;
-    padding: 10px 20px;
-    background: whitesmoke;
-    color: skyblue;
 }

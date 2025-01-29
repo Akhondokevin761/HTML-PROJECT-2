@@ -73,38 +73,36 @@
             navLinks.style.right = "-200px"; 
         }
     </script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+<!-- Carousal Script -->
+ <script>
+    document.addEventListener("DOMContentLoaded", function () {
     const carouselContainer = document.querySelector(".carousal-container");
     const slides = document.querySelectorAll(".slides");
-    const totalSlides = slides.length;
-
     let currentIndex = 0;
-
-    // Clone the first slide and append it to the end
-    const firstSlideClone = slides[0].cloneNode(true);
-    carouselContainer.appendChild(firstSlideClone);
 
     function moveToNextSlide() {
         currentIndex++;
-        carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-        // Reset to the first slide after the last one
-        if (currentIndex === totalSlides) {
-            setTimeout(() => {
-                carouselContainer.style.transition = "none"; // Disable animation
-                currentIndex = 0;
-                carouselContainer.style.transform = `translateX(0)`;
-                setTimeout(() => {
-                    carouselContainer.style.transition = "transform 1s ease-in-out"; // Re-enable animation
-                });
-            }, 1000); // Match the transition duration
+        if (currentIndex >= slides.length) {
+            currentIndex = 0; // Loop back to the first slide
         }
+        carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
 
-    // Automatically move to the next slide every 5 seconds
     setInterval(moveToNextSlide, 5000);
 });
+
+ </script>
+
+<!-- Navigation bar javascript -->
+<script>
+    var navLinks = document.getElementById("navLinks");
+    function showMenu() {
+        navLinks.style.right = "0"; // Show the menu by bringing it into view
+    }
+    function hideMenu() {
+        navLinks.style.right = "-200px"; // Fully hide the menu off-screen
+    }
 </script>
+
 </body>
 </html>

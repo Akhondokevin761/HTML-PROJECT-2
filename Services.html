@@ -77,5 +77,16 @@
             navLinks.style.right = "-200px"; 
         }
     </script>
+
+    <!-- Navigation bar javascript -->
+<script>
+    var navLinks = document.getElementById("navLinks");
+    function showMenu() {
+        navLinks.style.right = "0"; // Show the menu by bringing it into view
+    }
+    function hideMenu() {
+        navLinks.style.right = "-100%"; // Fully hide the menu off-screen
+    }
+</script>
 </body>
 </html>
