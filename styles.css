@@ -72,7 +72,7 @@ nav{
 
 .text-box p{
     margin: 10px 0 40px;
-    font-size: 14px;
+    font-size: 28px;
     color: skyblue;
 }
 
@@ -103,8 +103,11 @@ nav .fa{
 
 @media(max-width:768px){
     .text-box h1{
-        font-size: 20px;
+        font-size: 30px;
     
+    }
+    .text-box p{
+        font-size: 20px;
     }
     .nav-links ul li{
         display: block;
